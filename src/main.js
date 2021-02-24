@@ -39,12 +39,6 @@ async function main() {
         }),
       ),
     );
-
-    await Promise.all(
-      deploymentIds.map(async (id) =>
-        client.repos.deleteDeployment({ ...context.repo, deployment_id: id }),
-      ),
-    );
   } catch (error) {
     core.setFailed(error.message);
   }
